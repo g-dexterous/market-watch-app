@@ -1,0 +1,12 @@
+{
+	"marketplaces":[
+		{
+			"name":"Themeforest",
+			"shortname":"tf"
+		},
+		{
+			"name":"Codecanyon",
+			"shortname":"cc"
+		}
+	]
+}
