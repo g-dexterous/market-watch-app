@@ -24,7 +24,7 @@ angular.module('marketWatchApp.controllers')
 			}
 		}
 	])
-	.controller('MainAreaCtrl', ['$scope','sharedSrv', function($scope,sharedSrv) {
+	.controller('MainAreaCtrl', ['$scope','sharedSrv','getTopSellersSrv', function($scope,sharedSrv,getTopSellersSrv) {
 		$scope.$on('selected-marketplace-changed', function(){
 			console.log("handled broadcast");
 			$scope.selectedMarketplace = sharedSrv.selectedMarketplace;
@@ -36,9 +36,24 @@ angular.module('marketWatchApp.controllers')
 
 		$scope.tabClick = function(index){
 			$scope.tabs.selectedIndex = index;
+			$scope.popularItems = {};
+
+			if(index==0){
+				getTopSellersSrv.get($scope.selectedMarketplace,function(result){
+
+					$scope.popularItems = result.popular;
+					console.log("marketplace data transfered to UI successfully")
+				})
+			}
 		}
 
 		$scope.getSelectedTabIndex = function(){
 			return $scope.tabs.selectedIndex;
 		}
-	}]);
+	}])
+	.controller('TopSellersCtrl',['$scope','sharedSrv',function($scope,sharedSrv){
+		$scope.label = "The Top Sellers";
+	}])
+
+
+	;

@@ -2,10 +2,12 @@
 	"marketplaces":[
 		{
 			"name":"Themeforest",
+			"codename":"themeforest",
 			"shortname":"tf"
 		},
 		{
 			"name":"Codecanyon",
+			"codename":"codecanyon",
 			"shortname":"cc"
 		}
 	]

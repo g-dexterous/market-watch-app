@@ -50,7 +50,10 @@
 		<div class="main-area">
 			<div class="row">
 				<div data-ng-show="getSelectedTabIndex()==0" class="large-12 columns">
-					Top Items
+					<div data-ng-controller="TopSellersCtrl">
+						Top Items: 
+						{{label}}
+					</div>
 					<div data-ng-model="selectedMarketplace">
 						{{ selectedMarketplace.name }}
 					</div>

@@ -9,11 +9,28 @@ angular.module('marketWatchApp.services')
 	['$resource','$http',function($resource, $http){
 		console.log("Registering service");
 		var _self = this;
-		this.get = function(callback){
+		_self.get = function(callback){
 			_self.resource = $resource('data/marketplaces.json');
 			_self.resource.get(
 				function(result){
 					console.log("Appears that service request is successful: "+result);
+					callback(result);
+				}
+			);
+		}
+	}
+])
+
+.service("getTopSellersSrv",
+	['$resource', '$http', function($resource, $http){
+		console.log("Registering getTopSellersSrv");
+		var _self = this;
+		_self.get = function(selectedMarketplace,callback){
+			var url = "data/proxy.php?sitename="+selectedMarketplace.codename;
+			_self.resource = $resource(url);
+			_self.resource.get(
+				function(result){
+					console.log("Response from envato API: "+result);
 					callback(result);
 				}
 			);
