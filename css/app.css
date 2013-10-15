@@ -32,3 +32,33 @@ h1, h2, h3, h4, h5, h6 {
   background: #f9f9f9;
   padding: 30px 0;
   min-height: 400px; }
+
+.sub-navigation span a {
+  padding: 3px 8px;
+  background: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0;
+  display: inline-block; }
+
+.sub-navigation span.selected a {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+ul.items {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+ul.items li {
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: none; }
+  ul.items li .item-thumb {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 15px; }
+  ul.items li .item-name {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 20px; }

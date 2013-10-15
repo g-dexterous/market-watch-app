@@ -51,8 +51,28 @@
 			<div class="row">
 				<div data-ng-show="getSelectedTabIndex()==0" class="large-12 columns">
 					<div data-ng-controller="TopSellersCtrl">
-						Top Items: 
-						{{label}}
+						<div class="row top-sellers">
+							<div class="large-12 columns sub-navigation">
+								<span data-ng-class="{selected: getSelectedSubNav()==0} ">
+									<a href="javaScript:void(0)" data-ng-click="subNavClick(0)">Last Week</a>
+								</span>
+								<span data-ng-class="{selected: getSelectedSubNav()==1} ">
+									<a href="javaScript:void(0)" data-ng-click="subNavClick(1)">Last 3 months</a>
+								</span>
+							</div>
+							<div class="large-12 columns ">
+								<ul class="items">
+									<li ng-repeat="item in items">
+										<div class="item-thumb">
+											<img src="{{item.thumbnail}}" alt="">
+										</div>
+										<div class="item-name">
+											{{item.item}}
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div data-ng-model="selectedMarketplace">
 						{{ selectedMarketplace.name }}
