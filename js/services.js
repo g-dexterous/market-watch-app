@@ -26,7 +26,8 @@ angular.module('marketWatchApp.services')
 		console.log("Registering getTopSellersSrv");
 		var _self = this;
 		_self.get = function(selectedMarketplace,callback){
-			var url = "data/proxy.php?sitename="+selectedMarketplace.codename;
+			var url = PROXY_URL + encodeURIComponent("popular:"+selectedMarketplace.codename+".json");
+			console.log(url);
 			_self.resource = $resource(url);
 			_self.resource.get(
 				function(result){
@@ -57,3 +58,5 @@ angular.module('marketWatchApp.services')
 
 	return sharedObject;
 }]);
+
+var PROXY_URL = "data/proxy.php?req=http://marketplace.envato.com/api/edge/";

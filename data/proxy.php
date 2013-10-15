@@ -1,7 +1,7 @@
 <?php
 	$ch = curl_init();
 
-	$url = 'http://marketplace.envato.com/api/v1/popular:'.$_GET["sitename"].'.json';
+	$url = $_GET["req"];
 
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);

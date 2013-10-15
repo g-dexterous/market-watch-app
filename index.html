@@ -67,7 +67,23 @@
 											<img src="{{item.thumbnail}}" alt="">
 										</div>
 										<div class="item-name">
-											{{item.item}}
+											<div class="item-title">
+												<a href="{{item.url}}">{{item.item}}</a>
+											</div>
+											<div class="links-wrapper">
+												{{item.sales}} Sales
+												<a href="javaScript:void(0)">Show More</a>
+												
+											</div>
+										</div>
+										<div class="meta-detail">
+											{{item | SalesPerDay }}
+										</div>
+										<div class="meta-detail">
+											{{item | DollarsPerDay:.5 }}
+										</div>
+										<div class="meta-detail">
+											{{item | DollarsPerDay:.7 }}
 										</div>
 									</li>
 								</ul>

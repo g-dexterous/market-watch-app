@@ -61,4 +61,23 @@ ul.items li {
   ul.items li .item-name {
     vertical-align: top;
     display: inline-block;
-    font-size: 20px; }
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+    height: 80px;
+    position: relative; }
+    ul.items li .item-name .links-wrapper {
+      position: absolute;
+      bottom: 0;
+      font-weight: normal;
+      font-size: 12px; }
+  ul.items li .meta-detail {
+    display: inline-block;
+    height: 80px;
+    background: beige;
+    padding: 15px;
+    width: 90px;
+    text-align: center;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.35);
+    margin-right: 13px; }
