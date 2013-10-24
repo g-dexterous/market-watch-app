@@ -3,6 +3,12 @@
 /* Filters */
 angular.module('marketWatchApp.filters')
 
+.filter("CostInDollars", function(){
+	return function(item){
+		return "$"+ parseInt(item.cost);
+	}
+})
+
 .filter("SalesPerDay",function(){
 	return function(item){
 		var salesPerday = "";

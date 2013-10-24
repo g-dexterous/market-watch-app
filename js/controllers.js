@@ -26,7 +26,6 @@ angular.module('marketWatchApp.controllers')
 	])
 	.controller('MainAreaCtrl', ['$scope','sharedSrv', function($scope,sharedSrv) {
 		
-
 		$scope.tabs = {
 			selectedIndex : 0
 		};
@@ -47,6 +46,8 @@ angular.module('marketWatchApp.controllers')
 		$scope.label = "The Top Sellers";
 		$scope.popularItems = {};
 		$scope.items = {};
+		$scope.displaySaleCount = false;
+		$scope.salesLabel = "";
 
 		$scope.subNav = {
 			selectedIndex: 0
@@ -72,20 +73,26 @@ angular.module('marketWatchApp.controllers')
 			getTopSellersSrv.get(sharedSrv.selectedMarketplace,function(result){
 				$scope.popularItems = result.popular;
 				$scope.updateData();
-				
 			});
+
 		}
 
 		$scope.updateData = function(){
 			if($scope.subNav.selectedIndex==0){
 				$scope.items = $scope.popularItems["items_last_week"];
+				$scope.displaySaleCount = true;
+
+				$scope.salesLabel = "Sales in Last Week";
+
 			}else if($scope.subNav.selectedIndex==1){
 				$scope.items = $scope.popularItems["items_last_three_months"];
-				
+				$scope.displaySaleCount = true;
+
+				$scope.salesLabel = "Sales in Last 3 Months";
 			}
 			console.log("marketplace data transfered to UI successfully");
 		}
 	}])
 
 
-	;
+;

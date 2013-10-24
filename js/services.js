@@ -13,7 +13,6 @@ angular.module('marketWatchApp.services')
 			_self.resource = $resource('data/marketplaces.json');
 			_self.resource.get(
 				function(result){
-					console.log("Appears that service request is successful: "+result);
 					callback(result);
 				}
 			);
@@ -31,7 +30,6 @@ angular.module('marketWatchApp.services')
 			_self.resource = $resource(url);
 			_self.resource.get(
 				function(result){
-					console.log("Response from envato API: "+result);
 					callback(result);
 				}
 			);

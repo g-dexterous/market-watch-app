@@ -22,7 +22,7 @@
 		<div class="columns large-12" data-ng-controller="SwitcherCtrl">
 			
 			    <div class="switcher-header">
-					Selected Marketplace:
+					Select Marketplace:
 			    	<select data-ng-options="marketplace.name for marketplace in marketplaces" data-ng-model="selectedMarketplace" ng-change="onMarketplaceChange()" class="marketplace-switcher  large-2"></select>
 			    	
 			    </div>
@@ -71,13 +71,11 @@
 												<a href="{{item.url}}">{{item.item}}</a>
 											</div>
 											<div class="links-wrapper">
-												{{item.sales}} Sales
-												<a href="javaScript:void(0)">Show More</a>
-												
+												{{item.sales}} {{salesLabel}}
 											</div>
 										</div>
 										<div class="meta-detail">
-											{{item | SalesPerDay }}
+											{{item | CostInDollars}}
 										</div>
 										<div class="meta-detail">
 											{{item | DollarsPerDay:.5 }}

@@ -9,6 +9,36 @@
 			"name":"Codecanyon",
 			"codename":"codecanyon",
 			"shortname":"cc"
+		},
+		{
+			"name":"Activeden",
+			"codename":"activeden",
+			"shortname":"ad"
+		},
+		{
+			"name":"Audiojungle",
+			"codename":"audiojungle",
+			"shortname":"ad"
+		},
+		{
+			"name":"Graphicriver",
+			"codename":"graphicriver",
+			"shortname":"gr"
+		},
+		{
+			"name":"Videohive",
+			"codename":"videohive",
+			"shortname":"vh"
+		},
+		{
+			"name":"3DOcean",
+			"codename":"3docean",
+			"shortname":"3d"
+		},
+		{
+			"name":"Photodune",
+			"codename":"photodune",
+			"shortname":"pd"
 		}
 	]
 }
